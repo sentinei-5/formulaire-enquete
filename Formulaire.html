@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enquête Mobilité Urbaine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-page {
+      display: none;
+      padding: 10px 0;
+    }
+
+    .form-page.active {
+      display: block;
+    }
+
+    .form-page.first-page.active {
+      background-color: white;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 4px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .checkbox-group, .radio-group {
+      margin-bottom: 10px;
+    }
+
+    .navigation {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img src="image.png" />
+
+  <form id="surveyForm" action="https://formsubmit.co/oumaroukietega534@gmail.com" method="POST">
+
+    <!-- Redirection après envoi -->
+    <input type="hidden" name="_next" value="https://merci.com" />
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Page de description -->
+    <div style="background-color:#ecf0f1; padding:15px; border-radius:8px; margin-bottom:20px;">
+      <h2 style="margin-top:0;">Description du formulaire</h2>
+      <p><strong>Titre du formulaire :</strong> Enquête sur la mobilité urbaine à Ouagadougou</p>
+      <p><strong>Objectif :</strong><br>
+        Ce questionnaire vise à mieux comprendre les habitudes de déplacement, les difficultés rencontrées et les attentes des habitants de Ouagadougou.
+      </p>
+      <p><strong>Confidentialité :</strong><br>
+        Toutes les réponses sont confidentielles.
+      </p>
+    </div>
+
+    <!-- Page 1 -->
+    <div class="form-page active first-page">
+      <h2>Informations générales</h2>
+      <label for="age">Âge :</label>
+      <select id="age" name="Âge" required>
+        <option value="">--Sélectionnez--</option>
+        <option>Moins de 18 ans</option>
+        <option>18-24 ans</option>
+        <option>25-30 ans</option>
+        <option>Plus de 30 ans</option>
+      </select>
+
+      <label for="sexe">Sexe :</label>
+      <select id="sexe" name="Sexe" required>
+        <option value="">--Sélectionnez--</option>
+        <option>Masculin</option>
+        <option>Féminin</option>
+      </select>
+
+      <label for="statut">Statut :</label>
+      <select id="statut" name="Statut" required>
+        <option value="">--Sélectionnez--</option>
+        <option>Élève / Étudiant</option>
+        <option>Commerçant</option>
+        <option>Fonctionnaire</option>
+        <option>Autre</option>
+      </select>
+      <input type="text" id="statut-autre" name="Statut Autre" placeholder="Si autre, précisez" />
+
+      <label for="quartier">Quartier :</label>
+      <input type="text" id="quartier" name="Quartier" required />
+    </div>
+
+    <!-- Page 2 -->
+    <div class="form-page">
+      <h2>Habitudes de déplacement</h2>
+      <label>Moyens de transport :</label>
+      <div class="checkbox-group">
+        <input type="checkbox" name="Transport utilisé" value="Marche" /> Marche<br>
+        <input type="checkbox" name="Transport utilisé" value="Vélo" /> Vélo<br>
+        <input type="checkbox" name="Transport utilisé" value="Moto" /> Moto<br>
+        <input type="checkbox" name="Transport utilisé" value="Transport en commun" /> Transport en commun<br>
+        <input type="checkbox" name="Transport utilisé" value="Taxi" /> Taxi<br>
+        <input type="checkbox" name="Transport utilisé" value="Autre" /> Autre :
+        <input type="text" name="Autre transport" />
+      </div>
+
+      <label for="depense">Dépenses moyennes :</label>
+      <select id="depense" name="Dépenses moyennes" required>
+        <option value="">--Sélectionnez--</option>
+        <option>Moins de 500 FCFA</option>
+        <option>500 – 1 000 FCFA</option>
+        <option>1 000 – 2 000 FCFA</option>
+        <option>Plus de 2 000 FCFA</option>
+      </select>
+
+      <label>Difficultés rencontrées :</label>
+      <div class="radio-group">
+        <input type="radio" name="Difficultés" value="oui" required /> Oui
+        <input type="radio" name="Difficultés" value="non" /> Non
+      </div>
+      <textarea name="Détails des difficultés" placeholder="Si oui, lesquelles ?"></textarea>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="form-page">
+      <h2>Perception des engins électriques</h2>
+      <label>Avantages :</label>
+      <div class="checkbox-group">
+        <input type="checkbox" name="Avantages" value="Moins de pollution" /> Moins de pollution<br>
+        <input type="checkbox" name="Avantages" value="Moins de bruit" /> Moins de bruit<br>
+        <input type="checkbox" name="Avantages" value="Réduction du coût" /> Réduction du coût<br>
+        <input type="checkbox" name="Avantages" value="Facilité d’entretien" /> Facilité d’entretien<br>
+        <input type="checkbox" name="Avantages" value="Autre" /> Autre :
+        <input type="text" name="Autre avantage" />
+      </div>
+
+      <label>Intérêt :</label>
+      <div class="radio-group">
+        <input type="radio" name="Intérêt" value="oui" required /> Oui
+        <input type="radio" name="Intérêt" value="non" /> Non
+      </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="form-page">
+      <h2>Vos suggestions</h2>
+      <label for="solutions">Solutions proposées :</label>
+      <textarea name="Solutions proposées" required></textarea>
+
+      <label>Souhaitez-vous participer à un projet pilote ?</label>
+      <div class="radio-group">
+        <input type="radio" name="Projet pilote" value="oui" required /> Oui
+        <input type="radio" name="Projet pilote" value="non" /> Non
+        <input type="radio" name="Projet pilote" value="peut-être" /> Peut-être
+      </div>
+
+      <div style="text-align:center; margin-top:20px;">
+        <button type="submit">Envoyer</button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <button type="button" onclick="prevPage()">Précédent</button>
+      <button type="button" onclick="nextPage()">Suivant</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  let currentPage = 0;
+  const pages = document.querySelectorAll('.form-page');
+  const prevBtn = document.querySelector('.navigation button:first-child');
+  const nextBtn = document.querySelector('.navigation button:last-child');
+
+  function showPage(index) {
+    pages.forEach((page, i) => {
+      page.classList.toggle('active', i === index);
+    });
+    prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
+    nextBtn.style.display = index === pages.length - 1 ? 'none' : 'inline-block';
+  }
+
+  function nextPage() {
+    if (currentPage < pages.length - 1) {
+      if (!validatePage(currentPage)) return;
+      currentPage++;
+      showPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 0) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  }
+
+  function validatePage(pageIndex) {
+    const page = pages[pageIndex];
+    const inputs = page.querySelectorAll("input, select, textarea");
+    for (const input of inputs) {
+      if (!input.checkValidity()) {
+        input.reportValidity();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Champ "autre" pour statut
+  const statutSelect = document.getElementById("statut");
+  const statutAutre = document.getElementById("statut-autre");
+  statutAutre.style.display = "none";
+  statutSelect.addEventListener("change", () => {
+    if (statutSelect.value === "Autre") {
+      statutAutre.style.display = "block";
+    } else {
+      statutAutre.style.display = "none";
+      statutAutre.value = "";
+    }
+  });
+
+  showPage(currentPage);
+</script>
+
+</body>
+</html>
